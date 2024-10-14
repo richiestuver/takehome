@@ -25,6 +25,6 @@ if __name__ == "__main__":
     for name in repo_names:
         repo = github.get_repo(name)
         stargazers = repo.get_stargazers()
-        users |= set([user.login for user in stargazers if user.name is not None])
+        users |= set([user.login for user in stargazers])
 
     print("\n".join(users))
